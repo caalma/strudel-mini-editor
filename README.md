@@ -19,5 +19,5 @@
   + Botones para conmutar características del Strudel-REPL.
   + Dimensiones de ventana.
 + Comando javascript específicos:
-  + `CC.leer("nombre_del_archivo")`: Lee el código con dicho nombre y extensión `.js` ubicado en la carpeta `./códigos/`, y lo introduce en el REPL.
+  + `CC.leer("nombre_del_archivo")`: Lee el código con dicho nombre y extensión `.js` ubicado en la carpeta `./codigos/`, y lo introduce en el REPL.
   + `CC.grabar("nombre_del_archivo")`: Graba el código actual del REPL en un archivo con dicho nombre y extensión `.js` en la carpeta `./codigos/`.

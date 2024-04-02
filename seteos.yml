@@ -6,3 +6,5 @@ fontfamily: 'Fira Code'
 
 carpeta:
   codigos: './codigos/'
+
+browser: 'chromium --app='

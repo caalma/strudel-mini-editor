@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from livereload import Server
-from app.app import app
+from app.app import app, cfg
 from subprocess import Popen
 from os import chdir
 
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     l = 35729
     url = f'http://{h}:{p}'
 
-    Popen(f'chromium --app="{url}"', shell=True)
+    Popen(f'{cfg["browser"]}"{url}"', shell=True)
     server = Server(app.wsgi_app)
 
     server.setHeader('Access-Control-Allow-Origin', '*')
