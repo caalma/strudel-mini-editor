@@ -1,0 +1,67 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:#222;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    padding: 10px 16px 6px;
+    background: #111;
+    text-align:center;
+    _display:none;
+}
+
+#menu.activo {
+    display: none;
+}
+
+#menu span {
+    color: #aaa;
+}
+
+#menu button {
+    background: #000;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: #ddd;
+    cursor: pointer;
+}
+
+#menu button:hover {
+    color: #fff;
+}
+
+#menu * {
+    font-family: 'Fira Code';
+    font-size: 1.1em;
+}
+
+.areaCode {
+    padding: 9px 0;
+}
+
+#codeComando {
+    background: transparent;
+    border: 1px solid #666;
+    width: calc(100% - 20px);
+    display: inline-block;
+    color: #fff;
+    padding: 3px 6px;
+    margin: 7px 5px 3px;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#codeComando.bien {
+    background: #6a0;
+}
+
+#codeComando.error {
+    background: #a10;
+}

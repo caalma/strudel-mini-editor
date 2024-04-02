@@ -1,0 +1,8 @@
+---
+
+title: 'STRUDEL: MiniEditor'
+theme: 'materialDark'
+fontfamily: 'Fira Code'
+
+carpeta:
+  codigos: './codigos/'
