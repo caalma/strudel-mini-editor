@@ -1,5 +1,3 @@
-
-
 const repl = document.createElement('strudel-editor');
 
 const repl_code = (c) => repl.editor.setCode(c);
@@ -18,6 +16,13 @@ const toggle_ac = () => { ac = !ac; repl_autoCompletion(ac);}
 
 const list_themes = () => console.log(Object.keys(themes).sort().join('\n'));
 const list_functions = () => console.log(Object.keys(controls).sort().join('\n'));
+
+const shutdown_app = () => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/fin', true);
+    xhr.send();
+    setTimeout( window.close, 500);
+};
 
 const set_theme = (k) => repl.editor.setTheme(k);
 
@@ -52,6 +57,8 @@ window.addEventListener('load', e => {
     window.btnLineNumberToggle.addEventListener('click', toggle_ln);
     window.btnWrapTextToggle.addEventListener('click', toggle_tw);
     window.btnAutoCommpleteToggle.addEventListener('click', toggle_ac);
+    window.btnShutdown.addEventListener('click', shutdown_app);
+
 
     window.codeComando.addEventListener('keydown', e => {
         let el = e.currentTarget,

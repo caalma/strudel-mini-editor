@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import yaml
 from os import listdir
 from os.path import splitext
 from flask import ( Flask, render_template, request,
                    url_for, redirect, jsonify, send_file)
-from werkzeug.exceptions import abort
-#from markdown import Markdown
-import yaml
+
 
 
 # configuración
@@ -24,15 +23,18 @@ app.debug = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
-# pagina de controles
+# enrutamientos
 
 @app.route('/')
 def editor():
     return render_template('editor.html', cfg=cfg, **locals())
 
 
-
-# codigos
+@app.route('/fin')
+def finalizar():
+    app.browser.kill()
+    app.livereload_shutdown()
+    return ''
 
 ru_codigos = '../' + cfg['carpeta']['codigos']
 

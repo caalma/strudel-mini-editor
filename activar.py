@@ -3,8 +3,12 @@
 
 from livereload import Server
 from app.app import app, cfg
-from subprocess import Popen
+from subprocess import Popen, PIPE
 from os import chdir
+
+def shutdown():
+    print("Chau, hasta luego!")
+    quit()
 
 if __name__ == '__main__':
     r = './app/'
@@ -15,7 +19,12 @@ if __name__ == '__main__':
     l = 35729
     url = f'http://{h}:{p}'
 
-    Popen(f'{cfg["browser"]}"{url}"', shell=True)
+    pb = Popen(f'{cfg["browser"]}"{url}"',
+        shell=True, stdout=PIPE, stderr=PIPE)
+
+    app.browser = pb
+    app.livereload_shutdown = shutdown
+
     server = Server(app.wsgi_app)
 
     server.setHeader('Access-Control-Allow-Origin', '*')
