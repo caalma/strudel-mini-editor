@@ -18,6 +18,7 @@
   + Botones de ejecución del Strudel-REPL.
   + Botones para conmutar características del Strudel-REPL.
   + Dimensiones de ventana.
+  + Botón para apagar el server y cerrar la ventana de la web-app.
 + Comando javascript específicos:
   + `CC.leer("nombre_del_archivo")`: Lee el código con dicho nombre y extensión `.js` ubicado en la carpeta `./codigos/`, y lo introduce en el REPL.
   + `CC.grabar("nombre_del_archivo")`: Graba el código actual del REPL en un archivo con dicho nombre y extensión `.js` en la carpeta `./codigos/`.
