@@ -17,7 +17,7 @@ const toggle_ac = () => { ac = !ac; repl_autoCompletion(ac);}
 const list_themes = () => console.log(Object.keys(themes).sort().join('\n'));
 const list_functions = () => console.log(Object.keys(controls).sort().join('\n'));
 
-const shutdown_app = () => {
+const shutdown_app = chau = () => {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/fin', true);
     xhr.send();
@@ -29,6 +29,8 @@ const set_theme = (k) => repl.editor.setTheme(k);
 const informar_dimensiones = () => {
     window.dimensiones.innerHTML = `${window.innerWidth}x${window.innerHeight}`;
 }
+
+const leer = CC.leer, grabar = CC.grabar;
 
 var ln, tw, ac;
 
@@ -87,5 +89,9 @@ window.addEventListener('load', e => {
 
     informar_dimensiones();
 
-    CC.lista(d => CC.leer(d.sort()[0]));
+    CC.lista(d => {
+        let ar = d.sort()[0];
+        leer(ar);
+        window.codeComando.value = `grabar("${ar}")`
+        });
 });

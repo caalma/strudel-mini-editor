@@ -14,8 +14,8 @@ if __name__ == '__main__':
     r = './app/'
     chdir(r)
 
-    h = '127.0.0.1'
-    p = 8099
+    h = cfg['server_host']
+    p = cfg['server_port']
     l = 35729
     url = f'http://{h}:{p}'
 
